@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Webpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: white;
+            --text-color: black;
+            --primary-color: #3498db;
+        }
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --primary-color: #1e90ff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.5s, color 0.5s;
+        }
+        nav {
+            background: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: yellow;
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .hero {
+            background: url('nature.jpg') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+        }
+        .box {
+            border: 2px solid #ccc;
+            padding: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        .parallax {
+            background: url('parallax.jpg') center/cover fixed no-repeat;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-shadow: 2px 2px 5px black;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .social-icons i {
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .social-icons i:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+        </nav>
+    </header><section class="hero">
+    <div class="overlay">
+        <h1>Welcome to Our Website</h1>
+        <p>Enhancing User Experience with CSS3</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="box">
+        <h2>Typography & Fonts</h2>
+        <p>Explore the different font styles and weights applied using CSS.</p>
+    </div>
+    <div class="box">
+        <h2>Borders & Shadows</h2>
+        <p>Creative borders and shadow effects make content stand out.</p>
+    </div>
+</section>
+
+<section class="parallax">
+    <h2>Parallax Section</h2>
+</section>
+
+<footer>
+    <p>Follow us on</p>
+    <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+    </div>
+</footer>
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
+
+</body>
+</html>
